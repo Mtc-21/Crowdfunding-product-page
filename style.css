@@ -96,10 +96,6 @@
       gap: 1rem;
     }
 
-    .content-modal {
-      margin: 5rem 1.5rem 1.5rem 1.5rem;
-    }
-
     h1,
     h2,
     h3,
@@ -397,7 +393,7 @@
     }
 
     .content-modal {
-      margin: 0;
+      margin: 5rem 1.5rem 1.5rem 1.5rem;
       background: white;
       border-radius: 0.5rem;
       display: grid;
@@ -644,6 +640,9 @@
 
       .content {
         padding: 0;
+      }
+      .content-modal{
+        margin: 0;
       }
 
       .content,
