@@ -1,0 +1,773 @@
+    @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      font-size: 100%;
+      box-sizing: border-box;
+    }
+
+    *::after,
+    *::before {
+      box-sizing: inherit;
+    }
+
+    :root {
+      --moderate-cyan: hsl(176, 50%, 47%);
+      --dark-cyan: hsl(176, 72%, 28%);
+      --black: hsl(0, 0%, 0%);
+      --dark-gray: hsl(0, 0%, 48%);
+    }
+
+    body,
+    html {
+      min-height: 100vh;
+    }
+
+    body {
+      font-size: 1rem;
+      font-family: 'Commissioner', sans-serif;
+      display: grid;
+      grid-template-rows: minmax(auto, 20rem) auto;
+      background: hsl(0, 0%, 95%);
+    }
+
+    body,
+    .main-menu a {
+      color: var(--black, hsl(0, 0%, 0%));
+    }
+
+    header {
+      background-image: url("images/image-hero-mobile.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, auto);
+      align-items: flex-start;
+      padding: 1rem;
+    }
+
+    .main-menu {
+      display: none;
+      border-radius: 0.5rem;
+      background: white;
+    }
+
+    .menu a {
+      padding: 1rem;
+      font-weight: 500;
+    }
+
+    .menu a:hover {
+      transform: scale(0.9);
+      transition: 0.5s ease;
+    }
+
+    .menu li:not(:last-child) {
+      border-bottom: 1px solid rgb(224, 224, 224);
+    }
+
+    .btn-menu,
+    label {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      justify-self: flex-end;
+    }
+
+    .btn-menu:checked~.main-menu {
+      display: block;
+      grid-column: 1/3;
+    }
+
+    .content {
+      position: relative;
+      margin: -5rem auto auto auto;
+      z-index: 100;
+      color: var(--dark-gray);
+    }
+
+    .content,
+    .content-modal,
+    .content-success {
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+
+    .content-modal {
+      margin: 5rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    .left,
+    .statistics li p:nth-last-child(2),
+    .card-modal input[type="number"],
+    .card-modal input::placeholder {
+      color: black;
+    }
+
+    .form-pledge input[type="number"]:hover {
+      border: solid 1px var(--moderate-cyan);
+    }
+
+    input[type="number"]:focus {
+      border: 1px solid transparent;
+      outline-width: 1px;
+      outline-color: var(--moderate-cyan);
+    }
+
+    .content,
+    .secundary {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .primary {
+      text-align: center;
+      position: relative;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1.5fr 0.5fr;
+    }
+
+    .primary::before {
+      position: absolute;
+      content: "";
+      background-image: url("images/logo-mastercraft.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 4rem;
+      left: 0;
+      right: 0;
+      top: -4rem;
+      bottom: 80%;
+    }
+
+    .blookmark {
+      background: transparent;
+      width: 3.6rem;
+      height: 3.6rem;
+      border-radius: 50%;
+    }
+
+    .blookmarkChange {
+      border: solid 2px var(--moderate-cyan) !important;
+      color: var(--moderate-cyan) !important;
+    }
+
+    .blookmark img {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+
+    .blookmark p {
+      display: none;
+    }
+
+    .secundary {
+      gap: 1rem;
+    }
+
+    .primary,
+    .secundary,
+    .statistics {
+      box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+    }
+
+    .primary,
+    .secundary,
+    .statistics,
+    .card,
+    .card-modal {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 0.5rem;
+    }
+
+    .primary h1,
+    .primary p {
+      grid-column: 1/3;
+    }
+
+    .primary :nth-last-child(2),
+    .primary :nth-last-child(1) {
+      align-self: center;
+    }
+
+    .blookmark {
+      justify-self: flex-end;
+    }
+
+    .primary a,
+    .selectReward,
+    .content-success button {
+      padding: 1rem 2rem;
+      background: var(--moderate-cyan);
+      color: white;
+      border-radius: 2rem;
+      justify-self: flex-start;
+      font-weight: 500;
+    }
+
+    .primary a:hover,
+    .content .card:not(:last-child) .selectReward:hover,
+    .content-success button:hover,
+    .submit:hover {
+      background: var(--dark-cyan);
+      transform: scale(0.9);
+      transition: 0.5s ease;
+    }
+
+    .blookmark:hover {
+      transform: scale(0.9);
+      transition: 0.5s ease;
+    }
+
+    .statistics {
+      padding: 1rem 1.5rem 4rem 1.5rem;
+    }
+
+    .statistics,
+    .statistics li {
+      position: relative;
+    }
+
+    .statistics li {
+      margin: 0 auto;
+      text-align: center;
+      display: block;
+      padding: 1rem;
+    }
+
+    .statistics::after,
+    .statistics::before {
+      content: "";
+      position: absolute;
+      left: 1.5rem;
+      bottom: 2.5rem;
+      height: 0.7rem;
+      border-radius: 0.5rem;
+    }
+
+    .statistics::after {
+      right: 6.5em;
+      background: var(--moderate-cyan);
+    }
+
+    .statistics::before {
+      right: 1.5rem;
+      background: rgb(224, 224, 224);
+    }
+
+    .statistics li:not(:last-child)::before {
+      position: absolute;
+      content: "";
+      left: 30%;
+      right: 30%;
+      bottom: 0;
+      border-bottom: 1px solid rgb(224, 224, 224);
+    }
+
+    .statistics li p:nth-last-child(2),
+    .left {
+      font-size: 2.1rem;
+      font-weight: 700;
+    }
+
+    .card {
+      display: grid;
+      gap: 0.2rem;
+      grid-template-rows: 0.3fr 1fr 2fr 1.2fr 0.5fr;
+      grid-template-rows: repeat(auto-fit, auto);
+    }
+
+    .card,
+    .card-modal {
+      padding: 1.2rem;
+      border: 1px solid rgb(224, 224, 224);
+    }
+
+
+    .pledge {
+      color: var(--moderate-cyan);
+      font-weight: 500;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .left span {
+      color: var(--dark-gray);
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    .content .card:last-child,
+    .modal .card-modal:last-child {
+      opacity: 0.5;
+    }
+
+    .content .card:last-child a:last-child {
+      background: var(--dark-gray);
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    h3 {
+      font-weight: 500;
+    }
+
+    button,
+    .submit,
+    input[type="checkbox"],
+    header label,
+    .modal label,
+    .modal input {
+      cursor: pointer;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .modal,
+    .modalsuccess {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      min-height: 100vh;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal {
+      overflow-y: scroll;
+      justify-content: space-between;
+    }
+
+    .modalsuccess {
+      justify-content: center;
+    }
+
+    .content-success {
+      background: white;
+      padding: 2rem;
+      margin: 1.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .content-success p {
+      padding: 1rem 0;
+    }
+
+    .content-modal {
+      margin: 0;
+      background: white;
+      border-radius: 0.5rem;
+      display: grid;
+      grid-template-columns: 1.8fr 0.2fr;
+    }
+
+    #modal,
+    #menu {
+      visibility: hidden;
+    }
+
+    .card-modal input[type="number"],
+    .card-modal::placeholder {
+      font-weight: 700;
+    }
+
+    .content-modal label,
+    .content-modal .infor,
+    .content-success p {
+      color: var(--dark-gray);
+    }
+
+    #titleModal {
+      grid-row: 1/2;
+    }
+
+
+    .btn-modal {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      justify-self: flex-end;
+      align-self: start;
+    }
+
+
+    #descriptionModal,
+    .card-modal {
+      grid-column: 1/3;
+    }
+
+
+    .card-modal {
+      display: grid;
+      gap: 0.5rem;
+      grid-template-columns: 0.1fr 1.1fr;
+      grid-template-rows: repeat(auto-fit, auto);
+      justify-content: flex-start;
+      position: relative;
+    }
+
+    .card-modal input[type="radio"] {
+      grid-row: 1/3;
+      justify-self: flex-start;
+      align-self: center;
+    }
+
+    .card-modal .no-reward {
+      grid-row: 1/2;
+    }
+
+    .card-modal input[type="radio"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 1px solid rgb(224, 224, 224);
+      border-radius: 50%;
+    }
+
+    .card-modal:not(:last-child) input[type="radio"]:hover {
+      border: 1px solid var(--moderate-cyan);
+    }
+
+    .card-modal:not(:last-child) input[type="radio"]:hover~.label {
+      color: var(--moderate-cyan)
+    }
+
+    .card-modal:not(:last-child) input[type="radio"]:checked {
+      background: var(--moderate-cyan);
+      box-shadow: inset 0 0 0 5px white;
+    }
+
+    .card-modal .label {
+      justify-self: flex-start;
+      grid-column: 2/3;
+      color: black;
+      font-weight: 700;
+    }
+
+
+    .card-modal .pledge {
+      grid-column: 2/3;
+    }
+
+
+    .card-modal .infor,
+    .card-modal .left,
+    .card-modal .form-pledge,
+    hr {
+      grid-column: 1/3;
+    }
+
+
+    .card-modal .infor {
+      padding: 1rem 0;
+    }
+
+    hr {
+      margin: 0 -1.2rem;
+      border: solid 1px rgb(240, 239, 239);
+      display: none;
+    }
+
+    .form-pledge {
+      padding-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .form-pledge>* {
+      text-align: center;
+    }
+
+    .form-pledge label {
+      display: block;
+      width: 100%;
+    }
+
+    .form-pledge input {
+      width: 45%;
+      border-radius: 2rem;
+      padding: 1rem;
+    }
+
+    .form-pledge input[type="submit"] {
+      flex: 1;
+      background: var(--moderate-cyan);
+      color: white;
+      width: auto;
+    }
+
+    input[type="number"] {
+      border: solid 1px rgb(224, 224, 224);
+      background-image: url("images/icon-dollar.svg");
+      background-position: left 20% center;
+      background-repeat: no-repeat;
+    }
+
+    .form-pledge .alert {
+      border: solid 1px red;
+    }
+
+    .form-pledge .alert:focus {
+      border: 1px solid transparent;
+      outline-width: 1px;
+      outline-color: red;
+    }
+
+    .optionSelect {
+      border: solid 1px var(--moderate-cyan)
+    }
+
+    .optionSelect hr {
+      display: block;
+    }
+
+    @media (min-width:1000px) {
+      body {
+        grid-template-rows: minmax(auto, 25rem) auto;
+      }
+
+      header {
+        background-image: url("images/image-hero-desktop.jpg");
+        padding-top: 3rem;
+        grid-template-columns: repeat(2, 35rem);
+        grid-template-rows: auto;
+        justify-content: center;
+      }
+
+      header label {
+        display: none;
+      }
+
+      header img {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        align-self: start;
+      }
+
+      .main-menu {
+        justify-self: flex-end;
+        display: block;
+        background: transparent;
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+
+      .main-menu {
+        border: none;
+      }
+
+      .menu {
+        display: inline-flex
+      }
+
+      .menu a {
+        padding: 0 1rem;
+        color: white;
+      }
+
+      .menu li:not(:last-child) {
+        border-bottom: none;
+      }
+
+      .primary {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .blookmark {
+        width: auto;
+        height: 3.3rem;
+        justify-self: flex-end;
+        padding-right: 1.5rem;
+        border-radius: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 500;
+        background: rgb(224, 224, 224);
+        color: rgb(83, 83, 83);
+      }
+
+      .blookmark p {
+        display: block;
+      }
+
+      .blookmark img {
+        height: 100%;
+      }
+
+      .content {
+        padding: 0;
+      }
+
+      .content,
+      .content-modal,
+      .content-success {
+        max-width: 45rem;
+      }
+
+      .statistics {
+        display: flex;
+        justify-content: flex-start;
+        gap: 4rem;
+      }
+
+      .statistics li {
+        margin: 0;
+      }
+
+      .statistics li:not(:last-child)::before {
+        position: absolute;
+        content: "";
+        top: 25%;
+        right: -2.5rem;
+        bottom: 20%;
+        border-right: 1px solid rgb(224, 224, 224);
+        border-bottom-color: transparent;
+      }
+
+      .card {
+        grid-template-columns: 1.4fr 0.6fr;
+        grid-template-rows: repeat(3, auto);
+        gap: 1rem;
+      }
+
+      .card .pledge,
+      .selectReward {
+        grid-column: 2/3;
+        justify-self: flex-end;
+      }
+
+      .card .left,
+      .card h3 {
+        grid-column: 1/2;
+      }
+
+      .card p {
+        grid-column: 1/3;
+      }
+
+      .modal {
+        display: flex;
+        justify-content: center;
+      }
+
+      .card-modal {
+        grid-template-columns: 0.2fr 1fr 1fr 0.6fr 0.2fr;
+        align-items: center;
+      }
+
+      .card-modal input[type="radio"] {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
+      .card-modal label {
+        grid-column: 2/3;
+      }
+
+      .card-modal .pledge {
+        grid-column: 3/4;
+      }
+
+      .card-modal .infor {
+        grid-column: 2/6;
+        padding: 0 0 1rem 0;
+      }
+
+      .card-modal .left {
+        grid-column: 5/6;
+        grid-row: 1/2;
+      }
+
+      .left {
+        font-size: 1.2rem;
+      }
+
+      .card-modal .form-pledge,
+      .card-modal hr {
+        grid-column: 1/6;
+      }
+
+      .form-pledge {
+        display: grid;
+        grid-template-columns: 1.7fr 0.5fr 0.7fr;
+      }
+
+      .form-pledge label {
+        grid-column: 1/2;
+        justify-self: flex-start;
+        text-align: left;
+      }
+
+      .form-pledge input {
+        width: 8rem;
+      }
+
+      .form-pledge input[type="number"] {
+        grid-column: 2/3;
+      }
+
+      .form-pledge input[type="submit"] {
+        grid-column: 3/4;
+      }
+
+      .content-success {
+        max-width: 25rem;
+      }
+    }
+
+    .closeModal {
+      display: none;
+      transition: all 5s ease;
+    }
+
+    .hide {
+      display: none;
+    }
