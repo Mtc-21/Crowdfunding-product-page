@@ -161,7 +161,7 @@
       height: 100%;
     }
 
-    .blookmark p {
+    .blookmark span{
       display: none;
     }
 
@@ -630,7 +630,7 @@
         color: rgb(83, 83, 83);
       }
 
-      .blookmark p {
+      .blookmark span {
         display: block;
       }
 
